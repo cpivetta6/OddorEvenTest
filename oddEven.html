@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Odd or Even</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Odd or Even</h1>
+
+  <label for="number">Enter a number:</label>
+  <input type="text" id="numberInput">
+  <button onclick="checkOddOrEven()">Check</button>
+  <p id="error" class="error"></p>
+
+  <script>
+    function checkOddOrEven() {
+      var number = document.getElementById("numberInput").value;
+
+      if (isNaN(number)) {
+        document.getElementById("error").textContent = "Please enter a valid number.";
+        return;
+      } else {
+        document.getElementById("error").textContent = "";
+      }
+
+      if (number % 2 === 0) {
+        alert(number + " is even.");
+      } else {
+        alert(number + " is odd.");
+      }
+    }
+  </script>
+</body>
+</html>
